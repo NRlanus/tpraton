@@ -5,13 +5,19 @@ object tom {
 	method velocidad(){
 		return 5+ energia/10
 	}
-	method correA(raton){
-		return 0.5*self.velocidad()*distancia.entre(posicion,raton.posicion())
+  method posicion(){
+		return posicion
 	}
+	method correrA(raton){
+		return 0.5*self.velocidad()*distancia.entre(self.posicion(),raton.posicion())
+	}
+  method puedeAtrapar(raton){
+    return self.velocidad() > raton.velocidad()
+  }
 }
 
 object jerry{
-	var peso=3
+	var peso= 3
 	var posicion= 10->5
 	method posicion(){
 		return posicion
@@ -21,8 +27,14 @@ object jerry{
 	}
 }
 
-
 object robotRaton{
-	var velocidad=8
-	var posicion = 12->2
+  var posicion=12->2
+  method velocidad(){
+    return 8
+  }
+  method posicion(){
+    return posicion
+  }
+
+  
 }
