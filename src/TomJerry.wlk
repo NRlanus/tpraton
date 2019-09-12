@@ -12,7 +12,7 @@ object tom {
 	}
 
 	method correrA(raton) {
-		return 0.5 * self.velocidad() * distancia.entre(self.posicion(), raton.posicion())
+		energia -= 0.5 * self.velocidad() * distancia.entre(self.posicion(), raton.posicion())
 	}
 
 	method puedeAtrapar(raton) {
